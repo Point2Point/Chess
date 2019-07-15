@@ -146,7 +146,6 @@
       },
     },
     methods: {
-      // eslint-disable-next-line consistent-return
       getValidationClass(fieldName) {
         const field = this.$v.form[fieldName];
 
