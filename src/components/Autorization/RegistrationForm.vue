@@ -96,6 +96,7 @@
     maxLength,
     sameAs,
   } from 'vuelidate/lib/validators';
+  import {HttpClient} from "../../classes/HttpClient";
 
   export default {
     name: 'registration-form',
@@ -156,11 +157,16 @@
         }
       },
       registration() {
+        const registrationData = {
+          login: this.$v.form.login,
+          password: this.$v.form.password
+        };
         this.sending = true;
-        window.setTimeout(() => {
-          this.$router.push('login')
-          this.sending = false;
-        }, 500);
+        HttpClient.post(`${this.$store.state.baseUrl}/register`,registrationData)
+          .then(res => {
+            this.$router.push('login')
+            this.sending = false;
+          })
       },
       onSubmit() {
 

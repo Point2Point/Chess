@@ -7,7 +7,7 @@ import store from './store';
 
 import './registerServiceWorker';
 import 'vue-material/dist/vue-material.min.css';
-
+import './main.scss'
 Vue.use(VueMaterial);
 Vue.config.productionTip = false;
 

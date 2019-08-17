@@ -12,9 +12,7 @@
           </div>
 
           <div class="md-toolbar-section-end">
-            <md-button class="md-icon-button">
-              <md-icon>more_vert</md-icon>
-            </md-button>
+
           </div>
         </div>
 
@@ -35,25 +33,31 @@
           </md-list-item>
         </md-list>
       </md-app-drawer>
-
       <md-app-content>
         <div id="app">
           <router-view/>
         </div>
-
       </md-app-content>
     </md-app>
+    <color-change></color-change>
   </div>
 </template>
 <script>
-export default {
-  name: 'App',
-  data: () => ({
-    menuVisible: false,
-  }),
-};
+  import ColorChange from "./components/color-change";
+  export default {
+    name: 'App',
+    components: {ColorChange},
+    data: () => ({
+      menuVisible: false,
+    }),
+    methods: {
+
+    }
+  };
 </script>
 <style lang="scss">
+  @import "~vue-material/dist/vue-material.css";
+
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -69,9 +73,11 @@ export default {
 
   #nav {
     padding: 30px;
+
     a {
       font-weight: bold;
       color: #2c3e50;
+
       &.router-link-exact-active {
         color: #42b983;
       }

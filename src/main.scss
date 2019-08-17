@@ -1,0 +1,25 @@
+@import "~vue-material/dist/theme/engine";
+// Import the theme engine
+
+@include md-register-theme("default", (
+        primary: md-get-palette-color(blue, A200),
+        accent: md-get-palette-color(red, A200),
+        theme: light
+));
+@include md-register-theme("green-dark", (
+        primary: md-get-palette-color(lightgreen, A700),
+        accent: md-get-palette-color(grey, 900),
+        theme: dark
+));
+@include md-register-theme("green-light", (
+        primary: md-get-palette-color(lightgreen, A700),
+        accent: md-get-palette-color(grey, 900)
+));
+@include md-register-theme("default-dark", (
+        primary: md-get-palette-color(blue, A200),
+        accent: md-get-palette-color(red, A200),
+        theme: dark
+));
+@import "~vue-material/dist/theme/all"; // Apply the theme
+
+
